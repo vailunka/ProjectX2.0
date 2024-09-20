@@ -1,6 +1,6 @@
 #include <string>
 using namespace std;
 
-int calculator(int num1, char op, int num2);
+float calculator(float num1, char op, float num2);
 
 //Header file for the calculator project
