@@ -16,11 +16,11 @@ jobs:
     - name: Check repo.
       uses: actions/checkout@v4
 
-    -name: Init image
+    - name: Init image
       run: ./build.sh
 
-    -name: Build image
+    - name: Build image
       run: ./name.sh
 
-    -name: run fuzzer
-     r un: ./ run.sh
+    - name: run fuzzer
+      run: ./run.sh
