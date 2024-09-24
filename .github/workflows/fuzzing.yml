@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Check repo.
+      uses: actions/checkout@v4
+
+    -name: Init image
+      run: ./name.sh
+      
+    -name: Build image
+      run: ./build.sh
