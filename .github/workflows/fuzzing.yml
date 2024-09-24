@@ -23,4 +23,9 @@ jobs:
       run: ./build.sh
 
     - name: run fuzzer
-      run: ./run.sh
+      run: |
+          docker --version
+          docker images
+          docker run --rm cifuzz-docker-image
+          docker ps -a
+          docker info
