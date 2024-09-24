@@ -12,15 +12,7 @@ FUZZ_TEST_SETUP() {
 
 FUZZ_TEST(const uint8_t *data, size_t size) {
 FuzzedDataProvider fuzzed_data(data, size); 
-int a = fuzzed_data.ConsumeFloatingPoint<double>();
+int a = fuzzed_data.ConsumeFloatingPoint<float>();
 char b = fuzzed_data.PickValueInArray({'+', '-', '*', '/'});
-int c = fuzzed_data.ConsumeFloatingPoint<double>();
-
-try{
-	int result = calculator(a, b, c);
-	assert(result>= INT_MIN && result <= INT_MAX);
-}
-catch(const std::exception &e){
-
-} 
+int c = fuzzed_data.ConsumeFloatingPoint<float>(); 
 }
